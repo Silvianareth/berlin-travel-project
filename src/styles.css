@@ -55,7 +55,7 @@ body{
     background: white;
   }
   
-  @media (max-width: 900px) {
+ /* @media (max-width: 900px) {
     header {
       padding: 60px 0;
     }
@@ -71,15 +71,24 @@ body{
     header h3 {
       font-size: 12px;
     }
-  }  
+
+    .grid{
+      grid-template-columns: 1fr;
+      grid-gap: 64px;
+    }
+  }  */
 
   .grid{
-    grid-template-columns: 1fr;
+    display: grid;
     grid-gap: 64px;
   }
 
+  .grid-3-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   section {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 100px;
   }
@@ -143,8 +152,7 @@ main h2 {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.5;
-  margin-top: 5rem;
-  margin-inline: 1rem;
+  margin: 0;
   letter-spacing: 5px;
   color: #272044;
   opacity: 0.3;
@@ -168,45 +176,6 @@ main p {
   opacity: 0.7;
 }
 
-  
-  @media (max-width: 960px) {
-    header {
-      padding: 60px 0;
-    }
-  
-    header h1 {
-      font-size: 48px;
-    }
-  
-    header h2 {
-      font-size: 20px;
-    }
-  
-    header h3 {
-      font-size: 12px;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-      grid-gap: 32px;
-    }
-
-    .img-responsive{
-      margin-top: 2rem;
-    }
-  
-    section {
-      padding: 30px;
-    }
-  }
-
-  @media (max-width: 1066px) {
-    footer {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/berlin9.jpeg");
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-  }
 
   section.secondary {
     background: #f8f8f8;
@@ -215,6 +184,15 @@ main p {
   .card {
     background: white;
     margin: 30px 0;
+  }
+
+  .embed{
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  .card-header.grid {
+    grid-gap: 0;
   }
   
   .card-body {
@@ -239,6 +217,49 @@ main p {
     text-decoration: none;
   }
 
-  .grid-3-columns {
-    grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 960px) {
+    header {
+      padding: 60px 0;
+    }
+  
+    header h1 {
+      font-size: 48px;
+    }
+  
+    header h2 {
+      font-size: 20px;
+    }
+  
+    header h3 {
+      font-size: 12px;
+    }
+  
+    .grid {
+      grid-template-columns: 1fr;
+      grid-gap: 32px;
+    }
+  
+    .img-responsive{
+      margin-top: 2rem;
+    }
+  
+    section {
+      padding: 30px;
+    }
+  
+    .card-header img {
+      display: none;
+    }
+
+    .embed {
+      aspect-ratio: 16/9;
+    }
+  }
+
+  @media (max-width: 1066px) {
+    footer {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/berlin9.jpeg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
   }
